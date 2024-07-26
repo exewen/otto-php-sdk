@@ -18,7 +18,7 @@ class AuthService
         $this->driver     = $config->get('otto.channel_api');
     }
 
-    public function getToken(string $clientId, string $clientSecret, string $channel)
+    public function getToken(string $clientId, string $clientSecret): string
     {
         $params = [
             'grant_type'    => 'client_credentials',
@@ -26,8 +26,7 @@ class AuthService
             'client_secret' => $clientSecret,
             'scope'         => 'orders shipments',
         ];
-        $result = $this->httpClient->post($this->driver, $this->tokenUrl, $params, [], [], 'form_params');
-        return json_decode($result, true);
+        return $this->httpClient->post($this->driver, $this->tokenUrl, $params, [], [], 'form_params');
     }
 
 

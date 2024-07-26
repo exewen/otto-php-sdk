@@ -19,17 +19,15 @@ class OrdersService
         $this->driver     = $config->get('otto.channel_api');
     }
 
-    public function getOrders(array $params, array $header)
+    public function getOrders(array $params, array $header): string
     {
-        $result = $this->httpClient->get($this->driver, $this->ordersListUrl, $params, $header);
-        return json_decode($result, true);
+        return $this->httpClient->get($this->driver, $this->ordersListUrl, $params, $header);
     }
 
-    public function getOrderDetail(string $orderId, array $params, array $header)
+    public function getOrderDetail(string $orderId, array $params, array $header): string
     {
         $url    = str_replace('{orderId}', $orderId, $this->ordersDetailUrl);
-        $result = $this->httpClient->get($this->driver, $url, $params, $header);
-        return json_decode($result, true);
+        return $this->httpClient->get($this->driver, $url, $params, $header);
     }
 
 

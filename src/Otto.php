@@ -26,9 +26,9 @@ class Otto implements OttoInterface
         $this->authService = $authService;
     }
 
-    public function getToken(string $clientId, string $clientSecret, string $channel = OttoEnum::CHANNEL)
+    public function getToken(string $clientId, string $clientSecret)
     {
-        $result = json_decode($this->authService->getToken($clientId, $clientSecret, $channel), true);
+        $result = json_decode($this->authService->getToken($clientId, $clientSecret), true);
         if (!isset($result['access_token'])) {
             throw new OttoException('Otto:获取token异常');
         }

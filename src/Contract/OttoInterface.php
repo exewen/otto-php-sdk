@@ -8,6 +8,6 @@ use Exewen\Otto\Constants\OttoEnum;
 
 interface OttoInterface
 {
-    public function getToken(string $clientId, string $clientSecret, string $channel = OttoEnum::CHANNEL);
+    public function getToken(string $clientId, string $clientSecret);
 
 }
