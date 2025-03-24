@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="OttoTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+    <option name="envFilePaths">
+      <list>
+        <option value="$PROJECT_DIR$/../../../../../env/common.env" />
+      </list>
+    </option>
+    <TestRunner class="ExewenTest\Otto\OttoTest" file="$PROJECT_DIR$/tests/OttoTest.php" scope="Class" />
+    <method v="2" />
+  </configuration>
+</component>
