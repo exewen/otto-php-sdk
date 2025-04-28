@@ -26,7 +26,8 @@ class AuthService
             'client_secret' => $clientSecret,
             'scope'         => 'orders shipments',
         ];
-        return $this->httpClient->post($this->driver, $this->tokenUrl, $params, [], [], 'form_params');
+        $response = $this->httpClient->post($this->driver, $this->tokenUrl, $params, [], [], 'form_params');
+        return $response->getBody()->getContents();
     }
 
 

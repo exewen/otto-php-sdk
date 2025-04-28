@@ -21,7 +21,8 @@ class ShippingsService
 
     public function setShipments(array $params, array $header)
     {
-        $result = $this->httpClient->post($this->driver, $this->setShipmentsUrl, $params, $header);
+        $response = $this->httpClient->post($this->driver, $this->setShipmentsUrl, $params, $header);
+        $result = $response->getBody()->getContents();
         return json_decode($result, true);
     }
 
